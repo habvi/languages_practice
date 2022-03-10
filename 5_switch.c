@@ -13,7 +13,7 @@ int main() {
     case 'C':
         printf("C!! maybe bad ..");
         break;
-    default :
+    default:
         printf("Invalid grade..");
     }
 
