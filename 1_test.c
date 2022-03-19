@@ -29,5 +29,10 @@ int main() {
     printf("%f\n", 5 / 4);
     printf("%d\n", 10 / 4);
 
+    char c = '#';
+    // same
+    printf("%i\n", (int) c);
+    printf("%i\n", c);
+
     return 0;
 }
