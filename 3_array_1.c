@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// wanna erase array[] ..
-float average(int, int array[]);
+float average(int, int *format);
 
 
 int main() {

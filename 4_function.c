@@ -7,6 +7,21 @@ int bigger(int, int);
 int countfunc(void);
 
 
+int main() {
+    sayHello("habvi");
+
+    printf("%f\n", cube(3));
+
+    printf("%d\n", bigger(10, 22));
+
+    countfunc();
+    countfunc();
+    countfunc();
+
+    return 0;
+}
+
+
 // void : nothing return
 void sayHello(char name[]) {
     printf("Hello %s\n", name);
@@ -32,17 +47,3 @@ int countfunc(void) {
     return count;
 }
 
-
-int main() {
-    sayHello("habvi");
-
-    printf("%f\n", cube(3));
-
-    printf("%d\n", bigger(10, 22));
-
-    countfunc();
-    countfunc();
-    countfunc();
-
-    return 0;
-}
