@@ -3,19 +3,18 @@
 int main() {
     int num;
     printf("Enter the integer : ");
-    // &はadress参照。integerやcharはいる,stringはいらない。
+    // & : referencing an address. need int or char.
     scanf("%d", &num);
     printf("The number is .. %d\n", num);
 
 
     char name[20];
     printf("Enter your name : ");
-
-    // 空白まで
-    scanf("%s", name);
+    // till space. no need &.
+    scanf("%20s", name);
     printf("Your name is .. %s\n", name);
 
-    // 指定文字数まで空白があっても1行
+    // up to specified number, even if spaces.
     fgets(name, 20, stdin);
     printf("Your name is .. %s\n", name);
 
