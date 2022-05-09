@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     char s1 = 'A';
     char s2 = 'B';
     char s3 = 'C';
@@ -8,7 +8,10 @@ int main() {
 
     char *hello = "Hello";
     char name[] = "habvi";
-    printf("%s %s\n", hello, name);
+    char name2[6] = {'h', 'a', 'b', 'v', 'i'};
+    char name3[] = {'h', 'a', 'b', 'v', 'i', '\0'};
+    name3[0] = 'a';
+    printf("%s %s %s %s\n", hello, name, name2, name3);
 
     int num = 5;
     printf("%d\n", num + 10);
