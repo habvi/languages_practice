@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define _GLIBCXX_DEBUG
-#define rep(i, a, b) for (int i = a; i < b; ++i)
 
 void line();
 
@@ -9,13 +8,17 @@ void line();
 int main(){
     vector<string> S = {"abc", "ddddd", "tyugh", "zz", "abc"};
 
+    // get value by key : O(logN)
+    // unordered_map(hash) : O(1)
+
+    // map<key, value>
     map<string, int> mp;
     for (auto s : S) {
         mp[s]++;
     }
 
     // lexicographical ascending order
-    for (auto itr = mp.begin(); itr != mp.end(); itr++) {
+    for (auto itr = mp.begin(); itr != mp.end(); ++itr) {
         cout << itr->first << " : " << itr->second << "\n";
     }
 
