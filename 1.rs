@@ -81,8 +81,10 @@ fn main() {
         level: 4
     };
     let mark1 = Grades('B', 'A', 'A', 3.88);
-    println!("{} level: {} remote: {} grades: {}",
-            user1.name, user1.level, user1.remote, mark1.3);
+    println!(
+        "{} level: {}, remote: {}, grades: {}",
+        user1.name, user1.level, user1.remote, mark1.3
+    );
 
     let user2 = Student {
         level: 2,
@@ -90,8 +92,50 @@ fn main() {
         remote: false
     };
     let mark2 = Grades('A', 'C', 'B', 3.25);
-    println!("{} level: {} remote: {} grades: {}",
-            user2.name, user2.level, user2.remote, mark2.3);
+    println!(
+        "{} level: {}, remote: {}, grades: {}",
+        user2.name, user2.level, user2.remote, mark2.3
+    );
+    println!("-----");
 
+
+    // enum (unit, tuple, classic struct)
+    {
+        enum WebEvent {
+            WELoad,
+            WEKeys(String, char),
+            WEClick { x: i64, y: i64 },
+        }
+    }
+
+    // define to use the data from the new structs
+    #[derive(Debug)]
+    struct KeyPress(String, char);
+    #[derive(Debug)]
+    struct MouseClick {
+        x: i64,
+        y: i64
+    }
+    #[derive(Debug)]
+    enum WebEvent {
+        WELoad(bool),
+        WEClick(MouseClick),
+        WEKeys(KeyPress),
+    }
+
+    // instantiate and bind the values
+    let click = MouseClick { x: 100, y: 250 };
+    println!("Mouse click location: {}, {}\n", click.x, click.y);
+
+    let keys = KeyPress(String::from("Ctrl+"), 'N');
+    println!("Keys pressed: {}{}\n", keys.0, keys.1);
+
+    let we_load = WebEvent::WELoad(true);
+    let we_click = WebEvent::WEClick(click);
+    let we_key = WebEvent::WEKeys(keys);
+    // {:#?} needs #[derive(Debug)]
+    println!(
+        "WebEvent enum structure:\n{:#?}\n{:#?}\n{:#?}\n",
+        we_load, we_click, we_key
+    );
 }
-
