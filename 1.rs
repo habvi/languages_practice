@@ -125,10 +125,10 @@ fn main() {
 
     // instantiate and bind the values
     let click = MouseClick { x: 100, y: 250 };
-    println!("Mouse click location: {}, {}\n", click.x, click.y);
+    println!("Mouse click location: {}, {}", click.x, click.y);
 
     let keys = KeyPress(String::from("Ctrl+"), 'N');
-    println!("Keys pressed: {}{}\n", keys.0, keys.1);
+    println!("Keys pressed: {}{}", keys.0, keys.1);
 
     let we_load = WebEvent::WELoad(true);
     let we_click = WebEvent::WEClick(click);
