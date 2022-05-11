@@ -19,12 +19,28 @@ enum Age {
     Used,
 }
 
-fn car_quality(miles: u32) -> (Age, u32) {
-    let quality = (Age::New, miles);
-    quality
+fn car_quality (miles: u32) -> (Age, u32) {
+    if miles > 0 {
+        return (Age::Used, miles);
+    }
+    (Age::New, miles)
 }
 
 fn car_factory(color: String, motor: Transmission, roof: bool, miles: u32) -> Car {
+    if car_quality(miles).0 == Age::Used {
+        if roof {
+            println!("Used car: {:?}, {}, Hard Top, {} miles", motor, color, miles)
+        } else {
+            println!("Used car: {:?}, {}, Convertible, {} miles", motor, color, miles)
+        }
+    } else {
+        if roof {
+            println!("New car: {:?}, {}, Hard Top, {} miles", motor, color, miles)
+        } else {
+            println!("New car: {:?}, {}, Convertible, {} miles", motor, color, miles)
+        }
+    }
+
     Car {
         color: color,
         motor: motor,
@@ -35,26 +51,14 @@ fn car_factory(color: String, motor: Transmission, roof: bool, miles: u32) -> Ca
 
 fn main() {
     let colors = ["Blue", "Red", "White"];
-    let mut car: Car;
-    let mut engine = Transmission::Manual;
 
-    car = car_factory(String::from(colors[1]), engine, true, 0);
-    println!(
-        "car 1: {:?}, {}, {:?}, {}, {} miles",
-        car.age.0, car.roof, car.motor, car.color, car.age.1
-    );
+    let mut engine = Transmission::Manual;
+    car_factory(String::from(colors[1]), engine, true, 0);
 
     engine = Transmission::Automatic;
-    car = car_factory(String::from(colors[2]), engine, false, 100);
-    println!(
-        "car 2: {:?}, {}, {:?}, {}, {} miles",
-        car.age.0, car.roof, car.motor, car.color, car.age.1
-    );
+    car_factory(String::from(colors[2]), engine, false, 100);
 
     engine = Transmission::SemiAuto;
-    car = car_factory(String::from(colors[0]), engine, false, 200);
-    println!(
-        "car 3: {:?}, {}, {:?}, {}, {} miles",
-        car.age.0, car.roof, car.motor, car.color, car.age.1
-    );
+    car_factory(String::from(colors[0]), engine, false, 200);
+
 }
