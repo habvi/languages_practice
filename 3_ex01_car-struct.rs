@@ -1,4 +1,3 @@
-// Declare Car struct to describe vehicle with four named fields
 struct Car {
     color: String,
     transmission: Transmission,
@@ -7,7 +6,6 @@ struct Car {
 }
 
 #[derive(PartialEq, Debug)]
-// Declare enum for Car transmission type
 enum Transmission {
     Manual,
     Automatic,
@@ -18,8 +16,6 @@ enum Transmission {
 // - Transmission type (enum value)
 // - Convertible (boolean, true if car is a convertible)
 fn car_factory(color: String, transmission: Transmission, convertible: bool) -> Car {
-    // Use the values of the input arguments
-    // All new cars always have zero mileage
     Car {
         color: color,
         transmission: transmission,
@@ -29,8 +25,6 @@ fn car_factory(color: String, transmission: Transmission, convertible: bool) -> 
 }
 
 fn main() {
-    // We have orders for two new cars!
-    // We'll declare a mutable car variable and reuse it for all the cars
     let mut car = car_factory(String::from("Red"), Transmission::Manual, false);
     println!(
         "car 1. {}, {:?}, convertible: {}, mileage: {}",
