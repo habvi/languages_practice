@@ -51,27 +51,32 @@ fn car_factory(order: i32, miles: u32) -> Car {
 }
 
 fn main() {
+    use std::collections::HashMap;
+    let mut orders: HashMap<i32, Car> = HashMap::new();
+
     let mut order = 1;
     let mut car: Car;
 
     car = car_factory(order, 1000);
+    orders.insert(order, car);
     println!(
-        "{}: {:?}, Hard top = {}, {:?}, {}, {} miles",
-        order, car.age.0, car.roof, car.motor, car.color, car.age.1
+        "car order {}: {:?}",
+        order, orders.get(&order)
     );
 
     order += 1;
     car = car_factory(order, 3000);
+    orders.insert(order, car);
     println!(
-        "{}: {:?}, Hard top = {}, {:?}, {}, {} miles",
-        order, car.age.0, car.roof, car.motor, car.color, car.age.1
+        "car order {}: {:?}",
+        order, orders.get(&order)
     );
 
     order += 1;
     car = car_factory(order, 0);
+    orders.insert(order, car);
     println!(
-        "{}: {:?}, Hard top = {}, {:?}, {}, {} miles",
-        order, car.age.0, car.roof, car.motor, car.color, car.age.1
+        "car order {}: {:?}",
+        order, orders.get(&order)
     );
-
 }
