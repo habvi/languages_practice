@@ -1,4 +1,4 @@
 /target
-*.exe
-*.pdb
+Cargo.lock
+Cargo.toml
 memo
