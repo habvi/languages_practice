@@ -37,6 +37,7 @@ fn longest_word<'a>(x: &'a String, y: &'a String) -> &'a String {
 #[derive(Debug)]
 struct Highlight<'document>(&'document str);
 
+#[allow(dead_code)]
 fn erase(s: String) {
     println!("{}", s);
 }
