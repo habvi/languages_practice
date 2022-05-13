@@ -38,6 +38,8 @@ fn main() {
     }
     println!("-----");
 
+
+    // unwrap
     let gift = Some("candy");
     // access to Option value
     assert_eq!(gift.unwrap(), "candy");
@@ -46,6 +48,16 @@ fn main() {
     let empty_gift: Option<&str> = None;
     // None can't unwrap -> panic
     // assert_eq!(empty_gift.unwrap(), "candy");
+
+
+    // expect
+    let a = Some("value");
+    assert_eq!(a.expect("custom panic massage!"), "value");
+
+    #[allow(unused_variables)]
+    let b: Option<&str> = None;
+    // panic
+    // b.expect("custom panic massage!");
 
     assert_eq!(Some("dog").unwrap_or("cat"), "dog");
     assert_eq!(None.unwrap_or("cat"), "cat");
