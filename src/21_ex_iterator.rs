@@ -12,7 +12,7 @@ impl<T> Groups<T> {
     }
 }
 
-impl<T: PartialEq> Iterator for Groups<T> {
+impl<T: PartialEq + std::fmt::Debug> Iterator for Groups<T> {
     type Item = Vec<T>;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -31,6 +31,7 @@ impl<T: PartialEq> Iterator for Groups<T> {
         }
 
         let items = self.inner.drain(0..cursor).collect();
+        println!("{:?}", items);
         Some(items)
     }
 }
