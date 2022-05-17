@@ -1,5 +1,6 @@
+use std::collections::HashMap;
+
 fn main() {
-    use std::collections::HashMap;
     // make empty hashmap
     let mut colors: HashMap<String, String> = HashMap::new();
 

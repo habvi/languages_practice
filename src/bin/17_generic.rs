@@ -1,5 +1,4 @@
 #[derive(Debug, PartialEq)]
-// T : same type
 struct Point<T> {
     x: T,
     y: T,
