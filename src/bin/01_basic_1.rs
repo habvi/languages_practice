@@ -41,6 +41,10 @@ fn main() {
         let num_16: u16 = 14;
         // let num: u32 = "14";   error
         println!("{} {} {}", 5 - num_32, 3i32 + num_32, 5u16 * num_16);
+
+        let a: i32 = 100;
+        let i: &i32 = &a;
+        println!("{} {}", a, i);
     }
     {
         let x;
@@ -66,6 +70,7 @@ fn main() {
         let num_32: f32 = 7.0;
         println!("{} {}", num_64 * 2.6, num_32 / 2.0);
 
+        println!("{}", (4 as f32) + 5.5);
         println!("{} {} {}", 9 / 2, 9f64 / 2.0, 9.0 / 2.0);
 
         let x = 10.;
@@ -86,14 +91,25 @@ fn main() {
         println!("{} {}", is_bigger, a);
     }
 
-    // char : 21bit integer?, string :  &str or String
+    // char : 21bit integer?
     {
         let c1 = 'A';
         let c2 = 'f';
         let c3: char = 'S';
-        let s1 = "abc";
-        let s2: &str = "rrr";
-        println!("{} {} {} {} {}", c1, c2, c3, s1, s2);
+        println!("{} {} {}", c1, c2, c3);
+    }
+
+    // String : &str or String
+    {
+        let s = "abc";
+        let s2: &str = "hello";
+        println!("{} {}", s, s2);
+
+        let mut s3: String = String::from("xxxworld");
+        s3 += "~~";
+        // like Vec[i32] -> &[i32]
+        let s4: &str = &s3[3..3 + 5];
+        println!("{} {} {} {}", s2.to_string() + "!", s3, s2, s4);
         println!("-----");
     }
 
@@ -107,5 +123,36 @@ fn main() {
 
         let (t1, t2): (i32, i32) = t;
         println!("{:?} {} {}", t, t1, t2);
+    }
+
+    // const
+    {
+        // const MOD: i32 = 998244353;
+        const MOD: i32 = 1_000_000_007;
+        const INF: usize = 1e18 as usize;
+        println!("{} {}", MOD, INF);
+    }
+
+    // binary number
+    {
+        let base_2 = 0b1110;
+        let base_8 = 0o1110;
+        let base_16 = 0x1110;
+        println!("{} {} {}", base_2, base_8, base_16);
+    }
+
+    // exponentiation
+    {
+        let x: i32 = 2;
+        println!("{} {}", x.pow(8), 2_i32.pow(4));
+        println!("-----");
+    }
+
+    {
+        println!("{} {} {}", usize::MIN, usize::MAX, usize::BITS);
+
+        use std::cmp::min;
+        use std::cmp::max;
+        println!("{} {}", min(5, 10), max(944, 12747));
     }
 }
