@@ -31,6 +31,19 @@ fn main() {
         _ => {},
     }
 
+    let a = [1, 2];
+    for i in 0..=1 {
+        match i {
+            0 => {
+                println!("index 0 is {}", a[i]);
+            },
+            1 => {
+                println!("index 1 is {}", a[i]);
+            },
+            _ => unreachable!(),
+        }
+    }
+
     // if let
     let num: Option<u8> = Some(7);
     if let Some(7) = num {
