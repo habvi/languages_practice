@@ -85,6 +85,7 @@ fn main() {
         assert_eq!(Some(&[10, 40][..]), v.get(0..2));
         assert_eq!(None, v.get(3));
         assert_eq!(None, v.get(0..4));
+        println!("-----");
     }
 
     // like stack
@@ -103,5 +104,41 @@ fn main() {
         while let Some(x) = stack.pop() {
             println!("{}", x);
         }
+        println!("-----");
+    }
+
+    // sort
+    {
+        use std::cmp::Reverse;
+        let mut v: Vec<usize> = vec![6, 2, 63, 1, 223];
+        v.reverse();
+        println!("{:?}", v);
+
+        v.sort();
+        println!("{:?}", v);
+
+        v.sort_by_key(|&x| Reverse(x));
+        println!("{:?}", v);
+        println!("-----");
+    }
+
+    // change size
+    {
+        let mut v: Vec<usize> = vec![1, 2, 4, 7];
+        v.insert(2, 4);
+        v.append(&mut vec![9]);
+        println!("{:?}", v);
+
+        v.remove(1);
+        println!("{:?}", v);
+
+        let mut tmp: Vec<usize> = v.clone();
+        tmp.retain(|&x| x == 4);
+        println!("{:?} {:?}", tmp, v);
+
+        v.drain(1..3);
+        println!("{:?}", v);
+        println!("-----");
+
     }
 }

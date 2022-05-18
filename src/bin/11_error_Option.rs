@@ -51,6 +51,15 @@ fn main() {
                 _ => unreachable!(),
             }
         }
+
+        let v: Vec<Vec<usize>> = vec![vec![2], vec![1, 5], vec![1, 18], vec![2]];
+        for i in 0..4 {
+            match v[i][..] {
+                [1, x] => println!("1, {}", x),
+                [2] => println!("only 2"),
+                _ => unreachable!(),
+            }
+        }
     }
 
     // if let
