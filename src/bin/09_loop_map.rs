@@ -55,6 +55,18 @@ fn main() {
             println!("{}", i);
         }
         println!("{:?}", v);
+
+        let mut v: Vec<usize> = vec![1, 2, 3, 4];
+        for x in v.iter_mut() {
+            *x += 5;
+        }
+        println!("{:?}", v);
+
+        let v: &mut [i32; 3] = &mut [2, 8, 18];
+        for x in v.iter_mut() {
+            *x *= 5;
+        }
+        println!("{:?}", v);
         println!("-----");
     }
 

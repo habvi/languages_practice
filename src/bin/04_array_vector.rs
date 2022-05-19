@@ -12,6 +12,8 @@ fn main() {
 
         let b: [i32; 4] = [3, 6, 2, 48];
         println!("{:?} {}", b, b.len());
+        // allocated
+        println!("{}", std::mem::size_of_val(&b));
         println!("-----");
     }
 

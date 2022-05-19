@@ -14,6 +14,9 @@ fn main() {
     let num = 10;
     let word = "abc";
     println!("{} {} {}", a, num, word);
+    println!("{1} {0} {1} {2}", a, num, word);
+
+    println!("{name} {num}", name = "ab", num = 256);
     println!("-----");
 
     // mut : mutable
@@ -110,6 +113,13 @@ fn main() {
         // like Vec[i32] -> &[i32]
         let s4: &str = &s3[3..3 + 5];
         println!("{} {} {} {}", s2.to_string() + "!", s3, s2, s4);
+
+        s3.push('g');
+        s3.push_str("iii");
+        println!("{} {}", s3.len(), s3);
+
+        println!("{} {} {}", s3.is_empty(), s3.capacity(), s3.contains("world"));
+        println!("{}", s3.replace("xxx", "hello "));
         println!("-----");
     }
 
@@ -139,6 +149,7 @@ fn main() {
         let base_8 = 0o1110;
         let base_16 = 0x1110;
         println!("{} {} {}", base_2, base_8, base_16);
+        println!("{:b} {:x} {:o}", 20, 20, 20);
     }
 
     // exponentiation
@@ -150,6 +161,7 @@ fn main() {
 
     {
         println!("{} {} {}", usize::MIN, usize::MAX, usize::BITS);
+        println!("{:?}", (i32::MIN, i32::MAX, i64::MIN, i64::MAX));
 
         use std::cmp::max;
         use std::cmp::min;

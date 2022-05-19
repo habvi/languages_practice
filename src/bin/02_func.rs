@@ -15,7 +15,7 @@ fn devide_by_num(num: u32) -> u32 {
     50 / num
 }
 
-fn func_1() {
+fn run_1() {
     let formal = "Good bye.";
     let casual = "See you later!";
     goodbye(formal);
@@ -42,7 +42,7 @@ fn print_s(s: &String) -> () {
     println!("{}", s);
 }
 
-fn func_2() {
+fn run_2() {
     println!("{}", mul(5, 9));
 
     let (a, b, c) = num_3(4, 8, 2);
@@ -75,7 +75,7 @@ impl Direction {
     }
 }
 
-fn func_3() {
+fn run_3() {
     let mut direction = Direction::Right;
     let x: i32 = 5;
     direction.move_to(x);
@@ -93,7 +93,7 @@ enum Action {
     Say(String, String),
 }
 
-fn func_4() {
+fn run_4() {
     let action1: Action = Action::Move { x: 200, y: 50 };
     println!("{:?}", action1);
 
@@ -118,7 +118,7 @@ impl Cat {
     }
 }
 
-fn func_5() {
+fn run_5() {
     let mut cat = Cat {
         name: String::from("nyan"),
         age: 5,
@@ -172,7 +172,7 @@ fn info_dog(animal: &dyn Animal, food: String) {
     println!("if human, age is {}.", animal.human_age());
 }
 
-fn func_6() {
+fn run_6() {
     // no use info_dog
     // let mut dog = Dog {
     //     name: String::from("pochi"),
@@ -195,20 +195,31 @@ fn func_6() {
 
 // ------------------------------------------------
 fn main() {
-    func_1();
+    run_1();
     println!("-----");
 
-    func_2();
+    run_2();
     println!("-----");
 
-    func_3();
+    run_3();
     println!("-----");
 
-    func_4();
+    run_4();
     println!("-----");
 
-    func_5();
+    run_5();
     println!("-----");
 
-    func_6();
+    run_6();
+
+    // closure
+    {
+        let num: usize = 24;
+        let calc = |x: usize, y: usize| x * y + num;
+        println!("{}", calc(2, 8));
+
+        // bind function
+        let double_calc = calc(5, 6) * 2;
+        println!("{}", double_calc);
+    }
 }
