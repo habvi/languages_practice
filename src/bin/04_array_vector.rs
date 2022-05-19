@@ -139,6 +139,13 @@ fn main() {
         v.drain(1..3);
         println!("{:?}", v);
         println!("-----");
+    }
 
+    // filter
+    {
+        let v: Vec<&str> = vec!["abc", "384", "abc", "a", "abc"];
+        let t: &str = "abc";
+        let num: usize = v.into_iter().filter(|x| x == &t).count();
+        println!("{}", num);
     }
 }
