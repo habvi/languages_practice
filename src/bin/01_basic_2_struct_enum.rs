@@ -13,24 +13,7 @@ struct Grades(char, char, char, f32);
 #[allow(dead_code)]
 struct Unit;
 
-// -----------------------------------------------
-#[derive(Debug)]
-struct KeyPress(String, char);
-
-#[derive(Debug)]
-struct MouseClick {
-    x: i64,
-    y: i64,
-}
-
-#[derive(Debug)]
-enum WebEvent {
-    WELoad(bool),
-    WEClick(MouseClick),
-    WEKeys(KeyPress),
-}
-
-fn main() {
+fn run_1() {
     // instantiate (&str -> String)
     let user1 = Student {
         name: String::from("aiueo"),
@@ -53,9 +36,26 @@ fn main() {
         "{} level: {}, remote: {}, grades: {}",
         user2.name, user2.level, user2.remote, mark2.3
     );
-    println!("-----");
 
-    // -----------------------------------------------
+}
+// -----------------------------------------------
+#[derive(Debug)]
+struct KeyPress(String, char);
+
+#[derive(Debug)]
+struct MouseClick {
+    x: i64,
+    y: i64,
+}
+
+#[derive(Debug)]
+enum WebEvent {
+    WELoad(bool),
+    WEClick(MouseClick),
+    WEKeys(KeyPress),
+}
+
+fn run_2() {
     // instantiate and bind the values
     let click = MouseClick { x: 100, y: 250 };
     println!("Mouse click location: {}, {}", click.x, click.y);
@@ -71,4 +71,12 @@ fn main() {
         "WebEvent enum structure:\n{:#?}\n{:#?}\n{:#?}\n",
         we_load, we_click, we_key
     );
+}
+
+// -----------------------------------------------
+fn main() {
+    run_1();
+    println!("-----");
+
+    run_2();
 }
