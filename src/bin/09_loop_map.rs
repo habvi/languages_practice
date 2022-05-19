@@ -69,10 +69,11 @@ fn main() {
         println!("{:?} {:?}", v, plus_5);
 
         let chars: [char; 5] = ['g', 'd', 'k', 'k', 'n'];
-        let hello: String = chars.iter()
-                                    .map(|&c| c as u8)
-                                    .map(|x| (x + 1) as char)
-                                    .collect();
+        let hello: String = chars
+            .iter()
+            .map(|&c| c as u8)
+            .map(|x| (x + 1) as char)
+            .collect();
         println!("{:?} {}", chars, hello);
     }
 }

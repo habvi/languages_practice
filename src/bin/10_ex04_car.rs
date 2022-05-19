@@ -19,7 +19,7 @@ enum Age {
     Used,
 }
 
-fn car_quality (miles: u32) -> (Age, u32) {
+fn car_quality(miles: u32) -> (Age, u32) {
     if miles > 0 {
         return (Age::Used, miles);
     }
@@ -28,7 +28,7 @@ fn car_quality (miles: u32) -> (Age, u32) {
 
 fn car_factory(order: i32, miles: u32) -> Car {
     let colors = ["Blue", "Red", "White", "Black"];
-    let mut color = (order-1) as usize;
+    let mut color = (order - 1) as usize;
     color %= 4;
 
     let mut motor = Transmission::Manual;

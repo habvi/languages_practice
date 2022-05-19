@@ -36,7 +36,7 @@ fn main() {
         let num: Option<u8> = Some(7);
         match num {
             Some(7) => println!("Lucky number"),
-            _ => {},
+            _ => {}
         }
 
         let a = [1, 2];
@@ -44,10 +44,10 @@ fn main() {
             match i {
                 0 => {
                     println!("index 0 is {}", a[i]);
-                },
+                }
                 1 => {
                     println!("index 1 is {}", a[i]);
-                },
+                }
                 _ => unreachable!(),
             }
         }
@@ -71,7 +71,6 @@ fn main() {
         println!("-----");
     }
 
-
     // unwrap
     {
         let gift: Option<&str> = Some("candy");
@@ -89,7 +88,6 @@ fn main() {
         }
         println!("-----");
     }
-
 
     // expect
     {

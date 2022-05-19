@@ -37,7 +37,7 @@ fn main() {
     // int : signed   (i8, i16, i32(default), i64, i128, isize)
     //       unsigned (u8, ...) only >= 0
     {
-        let num_32 = 12;      // i32
+        let num_32 = 12; // i32
         let num_16: u16 = 14;
         // let num: u32 = "14";   error
         println!("{} {} {}", 5 - num_32, 3i32 + num_32, 5u16 * num_16);
@@ -66,7 +66,7 @@ fn main() {
 
     // float : f32, f64(default)
     {
-        let num_64 = 4.0;       // f64
+        let num_64 = 4.0; // f64
         let num_32: f32 = 7.0;
         println!("{} {}", num_64 * 2.6, num_32 / 2.0);
 
@@ -151,8 +151,8 @@ fn main() {
     {
         println!("{} {} {}", usize::MIN, usize::MAX, usize::BITS);
 
-        use std::cmp::min;
         use std::cmp::max;
+        use std::cmp::min;
         println!("{} {}", min(5, 10), max(944, 12747));
     }
 }

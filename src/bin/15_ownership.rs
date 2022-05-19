@@ -11,8 +11,8 @@ fn print_greeting(message: &String) {
 }
 
 // fn change(message: &String) {
-    //     message.push_str("!!");
-    // }
+//     message.push_str("!!");
+// }
 
 fn change2(message: &mut String) {
     message.push_str("!!");
@@ -50,13 +50,11 @@ fn main() {
     // println!("{}", name);
     println!("{}", name2);
 
-
     let s = String::from("hello");
     // ownership s moved into process
     process(s);
     // error : value used here after erase
     // process(s);
-
 
     let n = 1u32;
     // ownership n copied into process2
@@ -64,14 +62,12 @@ fn main() {
     // n can be used again because it was just copied, wasn't moved.
     process2(n);
 
-
     // use clone
     let s = String::from("hello world");
     process(s.clone());
     // s was never moved
     process(s);
     println!("-----");
-
 
     // reference and borrowing
     // only use either &T or &mut T
@@ -90,7 +86,6 @@ fn main() {
     change2(&mut greeting);
     println!("{}", greeting);
 
-
     #[allow(unused_variables)]
     let x;
     #[allow(unused_assignments)]
@@ -100,7 +95,6 @@ fn main() {
     }
     // error : y already dropped
     // println!("x : {}", x);
-
 
     let magic1 = String::from("abracadabra");
     let magic2 = String::from("shazam");
@@ -115,7 +109,6 @@ fn main() {
     // }
     // println!("{}", result);
     println!("-----");
-
 
     let text = String::from("The quick brown fox jumps over the lazy dog.");
     let fox = Highlight(&text[4..19]);

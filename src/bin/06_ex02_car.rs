@@ -19,7 +19,7 @@ enum Age {
     Used,
 }
 
-fn car_quality (miles: u32) -> (Age, u32) {
+fn car_quality(miles: u32) -> (Age, u32) {
     if miles > 0 {
         return (Age::Used, miles);
     }
@@ -29,15 +29,24 @@ fn car_quality (miles: u32) -> (Age, u32) {
 fn car_factory(color: String, motor: Transmission, roof: bool, miles: u32) -> Car {
     if car_quality(miles).0 == Age::Used {
         if roof {
-            println!("Used car: {:?}, {}, Hard Top, {} miles", motor, color, miles)
+            println!(
+                "Used car: {:?}, {}, Hard Top, {} miles",
+                motor, color, miles
+            )
         } else {
-            println!("Used car: {:?}, {}, Convertible, {} miles", motor, color, miles)
+            println!(
+                "Used car: {:?}, {}, Convertible, {} miles",
+                motor, color, miles
+            )
         }
     } else {
         if roof {
             println!("New car: {:?}, {}, Hard Top, {} miles", motor, color, miles)
         } else {
-            println!("New car: {:?}, {}, Convertible, {} miles", motor, color, miles)
+            println!(
+                "New car: {:?}, {}, Convertible, {} miles",
+                motor, color, miles
+            )
         }
     }
 
@@ -60,5 +69,4 @@ fn main() {
 
     engine = Transmission::SemiAuto;
     car_factory(String::from(colors[0]), engine, false, 200);
-
 }

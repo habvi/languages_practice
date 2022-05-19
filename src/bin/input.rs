@@ -31,7 +31,8 @@ fn input_t<T: std::str::FromStr>() -> T {
 }
 
 fn input_vec<T: std::str::FromStr>() -> Vec<T> {
-    input_t::<String>().split_whitespace()
+    input_t::<String>()
+        .split_whitespace()
         .map(|e| e.parse().ok().unwrap())
         .collect()
 }

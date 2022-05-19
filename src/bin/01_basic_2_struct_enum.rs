@@ -20,7 +20,7 @@ struct KeyPress(String, char);
 #[derive(Debug)]
 struct MouseClick {
     x: i64,
-    y: i64
+    y: i64,
 }
 
 #[derive(Debug)]
@@ -35,7 +35,7 @@ fn main() {
     let user1 = Student {
         name: String::from("aiueo"),
         remote: true,
-        level: 4
+        level: 4,
     };
     let mark1 = Grades('B', 'A', 'A', 3.88);
     println!(
@@ -46,7 +46,7 @@ fn main() {
     let user2 = Student {
         level: 2,
         name: String::from("oaiue"),
-        remote: false
+        remote: false,
     };
     let mark2 = Grades('A', 'C', 'B', 3.25);
     println!(
@@ -54,8 +54,6 @@ fn main() {
         user2.name, user2.level, user2.remote, mark2.3
     );
     println!("-----");
-
-
 
     // -----------------------------------------------
     // instantiate and bind the values

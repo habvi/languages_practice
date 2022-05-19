@@ -18,7 +18,6 @@ fn _hashmap() {
     println!("{:?}", colors.get(rm));
 }
 
-
 use std::collections::VecDeque;
 use std::iter::FromIterator;
 
@@ -44,7 +43,6 @@ fn _deque() {
     let v: Vec<usize> = Vec::from(d);
     println!("{:?}", v);
 }
-
 
 fn main() {
     _hashmap();

@@ -19,7 +19,7 @@ enum Age {
     Used,
 }
 
-fn car_quality (miles: u32) -> (Age, u32) {
+fn car_quality(miles: u32) -> (Age, u32) {
     if miles > 0 {
         return (Age::Used, miles);
     }
@@ -43,7 +43,7 @@ fn car_factory(order: i32, miles: u32) -> Car {
     }
 
     Car {
-        color: String::from(colors[(color-1) as usize]),
+        color: String::from(colors[(color - 1) as usize]),
         motor: motor,
         roof: roof,
         age: car_quality(miles),
@@ -59,24 +59,15 @@ fn main() {
 
     car = car_factory(order, 1000);
     orders.insert(order, car);
-    println!(
-        "car order {}: {:?}",
-        order, orders.get(&order)
-    );
+    println!("car order {}: {:?}", order, orders.get(&order));
 
     order += 1;
     car = car_factory(order, 3000);
     orders.insert(order, car);
-    println!(
-        "car order {}: {:?}",
-        order, orders.get(&order)
-    );
+    println!("car order {}: {:?}", order, orders.get(&order));
 
     order += 1;
     car = car_factory(order, 0);
     orders.insert(order, car);
-    println!(
-        "car order {}: {:?}",
-        order, orders.get(&order)
-    );
+    println!("car order {}: {:?}", order, orders.get(&order));
 }

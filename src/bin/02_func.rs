@@ -29,7 +29,6 @@ fn func_1() {
     println!("{}", devide_by_num(num));
 }
 
-
 // ------------------------------------------------
 fn mul(x: i32, y: i32) -> i32 {
     x * y
@@ -55,7 +54,6 @@ fn func_2() {
     let t = s;
     println!("{} {}", t, &t);
 }
-
 
 // ------------------------------------------------
 #[allow(dead_code)]
@@ -86,7 +84,6 @@ fn func_3() {
     direction.move_to(8);
 }
 
-
 // ------------------------------------------------
 #[allow(dead_code)]
 #[derive(Debug)]
@@ -97,17 +94,13 @@ enum Action {
 }
 
 fn func_4() {
-    let action1: Action = Action::Move { 
-        x: 200,
-        y: 50
-    };
+    let action1: Action = Action::Move { x: 200, y: 50 };
     println!("{:?}", action1);
 
     if let Action::Move { x: x1, y: y1 } = action1 {
         println!("{} {}", x1, y1);
     }
 }
-
 
 // ------------------------------------------------
 #[derive(Debug)]
@@ -139,7 +132,6 @@ fn func_5() {
     let s = "meat";
     cat.introduce(s);
 }
-
 
 // ------------------------------------------------
 trait Animal {
@@ -200,8 +192,6 @@ fn func_6() {
     };
     info_dog(&dog, String::from("fruit"));
 }
-
-
 
 // ------------------------------------------------
 fn main() {

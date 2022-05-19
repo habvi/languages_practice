@@ -12,10 +12,7 @@ struct Counter {
 
 impl Counter {
     fn new(length: usize) -> Counter {
-        Counter {
-            count: 0,
-            length,
-        }
+        Counter { count: 0, length }
     }
 }
 
@@ -51,8 +48,6 @@ fn main() {
     let sum_until_10: usize = Counter::new(10).sum();
     println!("{}", sum_until_10);
 
-    let power_of_2: Vec<usize> = Counter::new(8)
-                                    .map(|n| 2usize.pow(n as u32))
-                                    .collect();
+    let power_of_2: Vec<usize> = Counter::new(8).map(|n| 2usize.pow(n as u32)).collect();
     println!("{:?}", power_of_2);
 }
