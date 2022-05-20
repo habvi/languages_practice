@@ -149,5 +149,16 @@ fn main() {
         let t: &str = "abc";
         let num: usize = v.into_iter().filter(|x| x == &t).count();
         println!("{}", num);
+
+        let vvc: Vec<Vec<char>> = vec![vec!['#', '#', '.'], vec!['.', '#', '#']];
+        let total: usize = vvc.iter().map(|vc| vc.iter().filter(|&c| *c == '#').count()).sum();
+        println!("{}", total);
+    }
+
+    // String -> Vec<char>
+    {
+        let s: String = String::from("hello");
+        let vc: Vec<char> = s.chars().collect();
+        println!("{:?}", vc);
     }
 }

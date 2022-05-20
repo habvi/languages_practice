@@ -1,7 +1,7 @@
-mod authentication;
+mod authentication_23;
 
 fn main() {
-    let mut user = authentication::User::new("Alice", "secret");
+    let mut user = authentication_23::User::new("Alice", "secret");
     println!("{:?}", user);
     // error : can't access. private field
     // println!("{} {}", user.username, user.password_hash);
@@ -11,7 +11,7 @@ fn main() {
     user.set_password("even-more-secret");
     println!("{:?}", user);
 
-    user = authentication::User::new("Bob", "password");
+    user = authentication_23::User::new("Bob", "password");
     println!("{:?}", user);
     user.set_password("change-secret");
     println!("{:?}", user);
