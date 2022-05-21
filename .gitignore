@@ -1,7 +1,17 @@
+# python
 tempCodeRunnerFile.cpp
+
+# cpp
 *.exe
 
+# c
 tempCodeRunnerFile.c
 
+# rust
+target
+Cargo.lock
+Cargo.toml
+
+# other
 yet
 memo
