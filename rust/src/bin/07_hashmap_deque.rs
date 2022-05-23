@@ -36,12 +36,23 @@ fn _hashmap() {
 
         // insert only if it doesn't already exist
         mp.entry("zzz").or_insert(30);
-        mp.entry("zzz").or_insert(50);
+        mp.entry("zzz").or_insert(0);
+        println!("{:?}", mp);
+
+        *mp.entry("zzz").or_insert(0) += 100;
+        *mp.get_mut("abc").unwrap() = 0;
+        println!("{:?}", mp);
+        mp.remove("abc");
         println!("{:?}", mp);
 
         // update value
         let value = mp.entry("z").or_insert(7);
         *value += 1;
+        println!("{:?}", mp);
+        println!("-----");
+    }
+    {
+        let mp: HashMap<char, usize> = ('a'..='z').zip(0..).collect();
         println!("{:?}", mp);
     }
 }

@@ -161,4 +161,11 @@ fn main() {
         let vc: Vec<char> = s.chars().collect();
         println!("{:?}", vc);
     }
+
+    // sum
+    {
+        let v: Vec<usize> = vec![1, 2, 3, 4, 5];
+        let total: usize = v.iter().sum();
+        println!("{}", total);
+    }
 }

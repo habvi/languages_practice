@@ -30,5 +30,16 @@ fn main() {
     {
         let x: usize = if 18 % 2 == 0 { 0 } else { 1 };
         println!("{}", x);
+
+        let v = [1, 4, 2, 1];
+        println!("{}", if v.iter().all(|&x| x >= 1) { "Yes" } else { "No" });
+        println!(
+            "{}",
+            if v.iter().all(|x| *x) {
+                "Yes"
+            } eles {
+                "No"
+            }
+        );
     }
 }
