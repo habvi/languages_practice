@@ -16,7 +16,7 @@ int main(void) {
         int i = c - '0';
         printf("%d ", i);
     } else {
-        printf("not int..");
+        printf("not 0 ~ 9..");
     }
 
     // same (<ctype.h> : isalpha, isupper, islower...)

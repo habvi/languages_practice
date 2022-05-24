@@ -8,7 +8,7 @@ int main() {
     int num[] = {1, 2, 4, 6, 8};
     num[3] = 100;
     printf("%d\n", num[3]);
-    printf("%d\n", sizeof(num) / sizeof(num[0]));
+    printf("%d %d %d\n", sizeof(num), sizeof(num[0]), sizeof(num) / sizeof(num[0]));
 
     int num2[10];
     num2[1] = 5;
