@@ -9,7 +9,7 @@ struct Student {
 };
 
 int main() {
-    struct Student s1;
+    struct Student s1, s2;
     strcpy( s1.name, "Jim" );
     strcpy( s1.major, "Math" );
     s1.age = 22;
@@ -19,6 +19,13 @@ int main() {
     printf("%s\n", s1.major);
     printf("%d\n", s1.age);
     printf("%f\n", s1.gpa);
+
+    // copy all
+    s2 = s1;
+    printf("%s\n", s2.name);
+    printf("%s\n", s2.major);
+    printf("%d\n", s2.age);
+    printf("%f\n", s2.gpa);
 
     return 0;
 }

@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-void line(void);
-
 void calc_min_max(int arr[], int *min, int *max) {
     *min = 100;
     *max = 0;
@@ -23,8 +21,4 @@ int main() {
     calc_min_max(arr, &min, &max);
     printf("min: %d, max: %d", min, max);
     return 0;
-}
-
-void line(void) {
-    printf("-----\n");
 }
