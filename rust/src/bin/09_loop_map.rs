@@ -44,6 +44,7 @@ fn main() {
         }
         println!("-----");
     }
+
     // Vec
     {
         let v: Vec<i32> = vec![6, 7, 8];
@@ -68,24 +69,5 @@ fn main() {
         }
         println!("{:?}", v);
         println!("-----");
-    }
-
-    // map
-    {
-        let v: Vec<usize> = vec![2, 4, 8, 456, 9];
-
-        let doubled: Vec<usize> = v.iter().map(|&e| e * 2).collect();
-        println!("{:?} {:?}", v, doubled);
-
-        let plus_5 = v.iter().map(|&e| e + 5).collect::<Vec<usize>>();
-        println!("{:?} {:?}", v, plus_5);
-
-        let chars: [char; 5] = ['g', 'd', 'k', 'k', 'n'];
-        let hello: String = chars
-            .iter()
-            .map(|&c| c as u8)
-            .map(|x| (x + 1) as char)
-            .collect();
-        println!("{:?} {}", chars, hello);
     }
 }

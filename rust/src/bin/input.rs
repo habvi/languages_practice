@@ -60,4 +60,15 @@ fn main() {
         let vi: Vec<usize> = input_vec();
         println!("{:?}", vi);
     }
+
+    {
+        let nm: Vec<usize> = input_vec();
+        let (n, m): (usize, usize) = (nm[0], nm[1]);
+
+        // same
+        let (n, m) = {
+            let nm: Vec<usize> = input_vec();
+            (nm[0], nm[1])
+        };
+    }
 }
