@@ -131,6 +131,10 @@ fn main() {
         let a = ['a', 'b', 'c'];
         let mut enm = a.iter().enumerate();
         println!("{:?} {:?} {:?}", enm.next(), enm.next(), enm.next());
+
+        for (i, c) in a.into_iter().enumerate() {
+            print!("{}{}", c, if i < a.len() - 1 { ' ' } else { '\n' });
+        }
         println!("-----");
     }
 
