@@ -1,3 +1,5 @@
+// https://qcguide-hrd.appspot.com/15-06.html
+
 #include <stdio.h>
 
 void line(void);

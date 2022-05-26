@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=zuegQmMdy8M
+
 #include <stdio.h>
 #include <string.h>
 
@@ -9,6 +11,7 @@ void run_5(void);
 void run_6(void);
 void run_7(void);
 void run_8(void);
+void run_9(void);
 
 int main() {
     run_1();
@@ -26,6 +29,8 @@ int main() {
     run_7();
     printf("-----\n");
     run_8();
+    printf("-----\n");
+    run_9();
     return 0;
 }
 
@@ -225,4 +230,17 @@ void run_8(void) {
 
         func_8(s);
     }
+}
+
+// -------------------------
+void run_9(void) {
+    // gets stored in the space for array
+    char s[10] = "hello";
+    printf("%s\n", s);
+
+    // gets stored as compile time constant
+    char *a = "abcd";
+    printf("%s\n", a);
+    a[1] = 'z'; // Segmentation fault
+    printf("%s\n", a);
 }
