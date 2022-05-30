@@ -42,6 +42,14 @@ fn main() {
         for num in 0..=3 {
             println!("{}", num * 2);
         }
+
+        for num in (1..5).rev() {
+            println!("{}", num);
+        }
+
+        for num in (1..20).step_by(4) {
+            println!("{}", num);
+        }
         println!("-----");
     }
 
