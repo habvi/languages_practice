@@ -14,22 +14,23 @@ void run_8(void);
 void run_9(void);
 
 int main() {
+    printf("----- 1\n");
     run_1();
-    printf("-----\n");
+    printf("----- 2\n");
     run_2();
-    printf("-----\n");
+    printf("----- 3\n");
     run_3();
-    printf("-----\n");
+    printf("----- 4\n");
     run_4();
-    printf("-----\n");
+    printf("----- 5\n");
     run_5();
-    printf("-----\n");
+    printf("----- 6\n");
     run_6();
-    printf("-----\n");
+    printf("----- 7\n");
     run_7();
-    printf("-----\n");
+    printf("----- 8\n");
     run_8();
-    printf("-----\n");
+    printf("----- 9\n");
     run_9();
     return 0;
 }
@@ -155,6 +156,10 @@ void run_6(void) {
     // value
     printf("%d %d\n", a[3], *(a + 3));
 
+    for (int *pt = a; pt != &a[5]; pt++) {
+        printf("%d ", *pt);
+    }
+    printf("\n");
 }
 
 // -------------------------
@@ -209,7 +214,7 @@ void func_8(char *s) {
     printf("\n");
 }
 
-// caracter arrays (like string)
+// character arrays (like string)
 void run_8(void) {
     {
         char s[4];
