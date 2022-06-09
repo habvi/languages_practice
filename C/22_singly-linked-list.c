@@ -101,7 +101,6 @@ void print_node2(Node2p p) {
     printf("\n");
 }
 
-// ???
 void del_head2(Node2p hp) {
     Node2p p;
     if (p = hp->next) {
