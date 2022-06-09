@@ -3,9 +3,10 @@
 
 // command-line argument, argv[0] = ./xxx
 int main(int argc, char *argv[]) {
-    // nothing.. why??
+    // full path
     printf("%s\n", argv[0]);
 
+    // argv
     printf("%s\n", argv[1]);
 
     if (argc == 2) {
