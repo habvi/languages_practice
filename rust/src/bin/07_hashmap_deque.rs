@@ -134,6 +134,26 @@ fn _hashset() {
     }
 }
 
+use std::collections::BinaryHeap;
+
+fn _binary_heap() {
+    let mut hq: BinaryHeap<i64> = BinaryHeap::new();
+
+    hq.push(5);
+    hq.push(1);
+    hq.push(14);
+    println!("{}", hq.pop().unwrap()); // largest num
+
+    if let Some(x) = hq.pop() {
+        println!("{}", x);
+    }
+
+    match hq.pop() {
+        Some(x) => println!("{}", x),
+        None => println!("empty~"),
+    }
+}
+
 fn main() {
     _hashmap();
     println!("-----");
@@ -142,4 +162,7 @@ fn main() {
     println!("-----");
 
     _hashset();
+    println!("-----");
+
+    _binary_heap();
 }

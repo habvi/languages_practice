@@ -138,19 +138,6 @@ fn main() {
         println!("-----");
     }
 
-    // filter
-    {
-        let v: Vec<&str> = vec!["abc", "384", "abc", "a", "abc"];
-        let t: &str = "abc";
-        let num: usize = v.into_iter().filter(|x| x == &t).count();
-        println!("{}", num);
-
-        let vvc: Vec<Vec<char>> = vec![vec!['#', '#', '.'], vec!['.', '#', '#']];
-        let total: usize = vvc.iter().map(|vc| vc.iter().filter(|&c| *c == '#').count()).sum();
-        println!("{}", total);
-        println!("-----");
-    }
-
     // for_each
     {
 
