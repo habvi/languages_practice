@@ -4,7 +4,6 @@ using namespace std;
 void line();
 void cout_all(set<int>);
 
-
 // set
 //     rend                rbegin
 //       _    2    6    9    13    _
@@ -17,6 +16,8 @@ int main() {
     s.insert(2);
     s.insert(5);
     s.insert(9);
+    // prefer?
+    s.emplace(12);
 
     // O(logN)
     s.erase(5);
@@ -24,15 +25,15 @@ int main() {
     // begin
     cout << *s.begin() << endl;
 
-    auto it = s.begin();
-    printf("%p\n", it);
-    cout << *it << endl;
-    cout << *next(it) << endl;
-    cout << *next(next(it)) << endl;
+    auto itr = s.begin();
+    printf("%p\n", itr);
+    cout << *itr << endl;
+    cout << *next(itr) << endl;
+    cout << *next(next(itr)) << endl;
     line();
 
-    it++;
-    cout << *it << endl;
+    itr++;
+    cout << *itr << endl;
     line();
 
 
@@ -44,9 +45,9 @@ int main() {
 
 
     // rbegin
-    auto it2 = s.rbegin();
-    printf("%p\n", it2);
-    cout << *it2 << endl;
+    auto itr2 = s.rbegin();
+    printf("%p\n", itr2);
+    cout << *itr2 << endl;
     line();
 
 
@@ -72,22 +73,21 @@ int main() {
     // erase 8 <= x <= 10
     auto low = s.lower_bound(8);
     auto high = s.upper_bound(10);
-    auto it4 = low;
-    while (it4 != high) {
-        cout << *it4 << endl;
-        ++it4;
+    itr = low;
+    while (itr != high) {
+        cout << *itr << endl;
+        ++itr;
     }
     line();
 
     s.erase(low, high);
-
     cout_all(s);
     line();
 
 
-    // x not in set -> return end() iterator
-    auto it5 = s.find(13);
-    // return 0 or 1
+    // O(logN) if not in set -> return end() iterator
+    itr = s.find(13);
+    // O(logN) return 0 or 1
     cout << s.count(13) << endl;
     // size
     if (!s.empty()) {
