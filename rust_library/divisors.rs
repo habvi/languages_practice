@@ -11,5 +11,8 @@ fn div_list(x: usize) -> Vec<usize> {
         }
         i += 1;
     }
+    // div_r.reverse();
+    // div_l.append(&mut div_r);
+    // div_l
     div_l.iter().cloned().chain(div_r.iter().rev().cloned()).collect()
 }
