@@ -45,38 +45,6 @@ fn main() {
         assert_eq!(v.get(0..4), None);
         assert_eq!(v.get(0..3), Some(&[5, 5, 6][..]));
     }
-    // like stack
-    {
-        let mut stack: Vec<i32> = Vec::new();
-        if let None = stack.pop() {
-            println!("None!!");
-        }
-        stack.push(4);
-        stack.push(-5);
-        stack.push(10);
-        if let Some(x) = stack.pop() {
-            println!("let : {}", x);
-        }
-        while let Some(x) = stack.pop() {
-            println!("while : {}", x);
-        }
-    }
-    // sort
-    {
-        let mut v: Vec<usize> = vec![5, 1, 3, 4];
-        v.reverse();
-        assert_eq!(vec![4, 3, 1, 5], v);
-
-        let v2: Vec<usize> = v.iter().rev().cloned().collect();
-        assert_eq!(vec![5, 1, 3, 4], v2);
-
-        v.sort();
-        assert_eq!(vec![1, 3, 4, 5], v);
-
-        use std::cmp::Reverse;
-        v.sort_by_key(|&x| Reverse(x));
-        assert_eq!(vec![5, 4, 3, 1], v);
-    }
     // sum
     {
         let total: i32 = v.iter().sum();
