@@ -72,8 +72,4 @@ fn main() {
         v.drain(1..3);
         assert_eq!(v, vec![1, 9, 8]);
     }
-    // swap
-    {
-        // use std::mem::swap;
-    }
 }

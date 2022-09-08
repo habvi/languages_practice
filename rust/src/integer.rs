@@ -33,20 +33,6 @@ fn main() {
         let max = i64::MAX; // 9223372036854775807
         let x = usize::BITS; // 64
     }
-    // float : default = f64
-    {
-        let num_32: f32 = 4.0;
-        let num_64 = 7.0;
-
-        let mut x: f64;
-        x = 10.;
-        x = 10_f64;
-        x = 2.5_f64;
-        x = 6.02e+23;
-        x = (4 as f64) + 5.5;
-        x = 9f64 / 2.0;
-        x = 9.0 / 2.0;
-    }
     // binary number
     {
         let base_2 = 0b1110;
@@ -59,12 +45,5 @@ fn main() {
         let x: i32 = 2;
         let y = x.pow(8);
         let y = 2_i32.pow(10);
-    }
-    // min, max
-    {
-        use std::cmp::min;
-        use std::cmp::max;
-        let x = min(5, 10);
-        let x = max(944, 12747);
     }
 }

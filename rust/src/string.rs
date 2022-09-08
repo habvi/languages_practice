@@ -43,4 +43,12 @@ fn main() {
         let vc: Vec<char> = s.chars().collect();
         assert_eq!(vc, ['h', 'e', 'l', 'l', 'o']);
     }
+    // Vec<char> -> String
+    {
+        let vc: Vec<char> = vec!['a', 'b', 'c'];
+        let s: String = vc.iter().collect();
+        assert_eq!(s, "abc");
+        let s = vc.iter().rev().collect::<String>();
+        assert_eq!(s, "cba");
+    }
 }
