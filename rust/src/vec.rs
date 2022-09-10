@@ -24,11 +24,6 @@ fn main() {
         let num = v.iter().filter(|&e| *e == 5).count();
         assert_eq!(num, 2);
     }
-    // range
-    {
-        let v: Vec<i32> = (1..=4).collect();
-        assert_eq!(vec![1, 2, 3, 4], v);
-    }
     // slice
     {
         let mut v2: &[i32] = &v; // all
@@ -71,5 +66,30 @@ fn main() {
 
         v.drain(1..3);
         assert_eq!(v, vec![1, 9, 8]);
+    }
+    // Vec yet
+    {
+        let v: Vec<i32> = vec![6, 7, 8];
+        for i in v.iter() {
+            println!("{}", i);
+        }
+
+        for i in &v {
+            println!("{}", i);
+        }
+        println!("{:?}", v);
+
+        let mut v: Vec<usize> = vec![1, 2, 3, 4];
+        for x in v.iter_mut() {
+            *x += 5;
+        }
+        println!("{:?}", v);
+
+        let v: &mut [i32; 3] = &mut [2, 8, 18];
+        for x in v.iter_mut() {
+            *x *= 5;
+        }
+        println!("{:?}", v);
+        println!("-----");
     }
 }

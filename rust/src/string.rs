@@ -26,7 +26,7 @@ fn main() {
         }
         assert_eq!(s.len(), 10);
         assert_eq!(s.is_empty(), false);
-        assert_eq!(s.capacity(), 16); // (?)
+        // assert_eq!(s.capacity(), 16);
         assert_eq!(s.contains("world"), true);
 
         // replace
