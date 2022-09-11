@@ -8,7 +8,7 @@ fn main() {
     }
     // string : &str or String
     {
-        let str = "abc"; // &str
+        let str = "abc"; // &str (immutable referance)
         let str: &str = "hello";
 
         let mut s: String;

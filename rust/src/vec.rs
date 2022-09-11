@@ -24,14 +24,6 @@ fn main() {
         let num = v.iter().filter(|&e| *e == 5).count();
         assert_eq!(num, 2);
     }
-    // slice
-    {
-        let mut v2: &[i32] = &v; // all
-        v2 = &v[0..=3];
-        v2 = &v[1..3];
-        v2 = &v[2..];
-        v2 = &v[..2];
-    }
     // get(i) -> Some() or None
     {
         let v = vec![10, 40, 30];
