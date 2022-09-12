@@ -7,6 +7,8 @@ fn main() {
         assert_eq!(mn, 5);
         let mx = max(944, 12747);
         assert_eq!(mx, 12747);
+
+        assert_eq!(min("abc", "a"), "a");
     }
     {
         let v: Vec<usize> = vec![1, 2, 3, 4, 5];
