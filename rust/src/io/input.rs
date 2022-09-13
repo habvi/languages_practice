@@ -1,6 +1,7 @@
 use std::io::stdin;
 use std::str::FromStr;
 
+#[allow(dead_code)]
 fn run1() {
     let mut s: String = String::new();
     let result: std::io::Result<usize> = stdin().read_line(&mut s);
@@ -36,6 +37,7 @@ fn input_t<T: FromStr>() -> T {
     s.trim().parse().ok().unwrap()
 }
 
+#[allow(dead_code)]
 fn run2() {
     let s1: String = input_s();
     let s2: String = input_t();
@@ -84,6 +86,7 @@ fn input_vec_vc() -> Vec<Vec<char>> {
     s.split_whitespace().map(|e| e.chars().collect()).collect()
 }
 
+#[allow(dead_code)]
 fn run3() {
     let v: Vec<char> = input_vec_c();
     println!("> {:?}", v);
@@ -119,6 +122,7 @@ fn input_tuple<T: FromStr>() -> (T, T, T) {
     )
 }
 
+#[allow(dead_code)]
 fn run4() {
     let (a, b, c): (usize, usize, usize) = input_tuple();
     println!("> {} {} {}", a, b, c);
@@ -153,6 +157,7 @@ fn input_ts<T: FromStr>(n: usize) -> Vec<T> {
     .collect()
 }
 
+#[allow(dead_code)]
 fn run5() {
     let n: usize = input_t();
 
@@ -182,6 +187,7 @@ fn input_nlines_vec<T: FromStr>(n: usize) -> Vec<Vec<T>> {
     (0..n).map(|_| input_vec()).collect()
 }
 
+#[allow(dead_code)]
 fn run6() {
     let n: usize = input_t();
 
@@ -221,5 +227,5 @@ fn main() {
     // run5();
 
     // n lines 2D vec
-    run6();
+    // run6();
 }

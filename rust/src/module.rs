@@ -22,13 +22,22 @@ mod back_of_house {
     }
 }
 
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlsit() {}
+    }
+}
+
+// re-exporting
+// pub use crate::front_of_house::hosting;
+
 pub fn eat_at_restaurant() {
     // absolute path
     crate::back_of_house::Breakfast::order("Danish");
     // relative path
     back_of_house::Breakfast::order("Danish");
 
-    // struct pub -> decide on each
+    // struct pub -> decide on each pub
     let mut meal = back_of_house::Breakfast::order("toast");
     println!("{:?}", meal);
     meal.bread = String::from("croissant");
@@ -39,6 +48,12 @@ pub fn eat_at_restaurant() {
     // enum pub -> all public
     let appetizer = back_of_house::Appetizer::Salad;
     println!("{:?}", appetizer);
+
+    // use
+    use crate::front_of_house::hosting;
+    // relative
+    // use self::front_of_house::hosting;
+    hosting::add_to_waitlsit();
 }
 
 fn main() {

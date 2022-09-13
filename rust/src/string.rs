@@ -33,7 +33,7 @@ fn main() {
         s = s.replace("xxx", "hello ");
         assert_eq!(s, "hello world~!");
 
-        // slice
+        // slice: only use a char boundary
         let str: &str = &s[6..6 + 5]; // world
         assert_eq!(str, "world");
     }
@@ -50,5 +50,22 @@ fn main() {
         assert_eq!(s, "abc");
         let s = vc.iter().rev().collect::<String>();
         assert_eq!(s, "cba");
+    }
+    // format
+    {
+        let s1 = String::from("ab");
+        let s2 = String::from("cd");
+        let s3 = String::from("ef");
+        let s = format!("{}-{}-{}", s1, s2, s3);
+        assert_eq!(s, "ab-cd-ef");
+    }
+    // add
+    {
+        let s1 = String::from("abc");
+        let s2 = String::from("def");
+        // only add &str to String
+        // s1 move
+        // &String -> &str : deref coercion (&s2 -> &s2[..])
+        let s = s1 + &s2;
     }
 }
