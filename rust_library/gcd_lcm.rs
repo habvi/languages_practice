@@ -7,5 +7,5 @@ fn gcd(a: usize, b: usize) -> usize {
 }
 
 fn lcm(a: usize, b: usize) -> usize {
-    a * b / gcd(a, b)
+    a / gcd(a, b) * b
 }
