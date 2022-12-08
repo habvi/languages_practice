@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
+// pointer, len, cap
 func type_slice() {
 	// array
 	var ns1 [3]int
@@ -56,9 +60,41 @@ func type_struct() {
 	fmt.Println(p2)
 }
 
+func type_map() {
+	var m1 map[string]int
+	// m1["ab"] = 10 // error
+	if m1 == nil {
+		fmt.Println("nil!")
+	}
+
+	m2 := map[string]int{"ab": 10, "cd": 20}
+	fmt.Println(m2)
+
+	m3 := make(map[string]int)
+	m3["ab"] = 10
+	fmt.Println(m3)
+
+	v, ok := m3["ab"]
+	fmt.Println(v, ok)
+
+	delete(m3, "ab")
+
+	m4 := map[string]int{} // same m3
+	fmt.Println(m4)
+
+	m5 := make(map[string]int, 10) // cap
+	fmt.Println(m5)
+
+	counts := map[string]int{}
+	str := "a b b c b a a a"
+	for _, s := range strings.Split(str, " ") {
+		counts[s]++
+	}
+	fmt.Println(counts)
+}
+
 func main() {
 	type_slice()
 	type_struct()
-
-	// var mp map[string]int
+	type_map()
 }
