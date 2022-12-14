@@ -5,31 +5,20 @@ import (
 	"fmt"
 )
 
-type Stack struct {
-	v *list.List
-}
-
-func NewStack() *Stack {
-	return &Stack{v: list.New()}
-}
-
-func (s *Stack) Push(v interface{}) {
-	s.v.PushBack(v)
-}
-
-func (s *Stack) Pop() interface{} {
-	b := s.v.Back()
-	if b == nil {
+func PopStack(stack *list.List) interface{} {
+	x := stack.Back()
+	if x == nil {
 		return nil
 	}
-	return s.v.Remove(b)
+	return stack.Remove(x)
 }
 
 func main() {
-	stack := NewStack()
-	stack.Push(2)
-	stack.Push(5)
-	stack.Push(8)
-	fmt.Println(stack.Pop())
-	fmt.Println(stack.Pop())
+	stack := list.New()
+	stack.PushBack(2)
+	stack.PushBack(5)
+	stack.PushBack(8)
+	fmt.Println(stack.Back().Value)
+	fmt.Println(PopStack(stack))
+	fmt.Println(PopStack(stack))
 }

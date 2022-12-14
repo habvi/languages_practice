@@ -5,31 +5,29 @@ import (
 	"fmt"
 )
 
-type Deque struct {
-	v *list.List
-}
-
-func NewDeque() *Deque {
-	return &Deque{v: list.New()}
-}
-
-func (d *Deque) Push(v interface{}) {
-	d.v.PushBack(v)
-}
-
-func (d *Deque) Pop() interface{} {
-	b := d.v.Front()
-	if b == nil {
+func PopFrontDeque(deque *list.List) interface{} {
+	x := deque.Front()
+	if x == nil {
 		return nil
 	}
-	return d.v.Remove(b)
+	return deque.Remove(x)
+}
+
+func PopBackDeque(deque *list.List) interface{} {
+	x := deque.Back()
+	if x == nil {
+		return nil
+	}
+	return deque.Remove(x)
 }
 
 func main() {
-	deque := NewDeque()
-	deque.Push(2)
-	deque.Push(5)
-	deque.Push(8)
-	fmt.Println(deque.Pop())
-	fmt.Println(deque.Pop())
+	deque := list.New()
+	deque.PushBack(2)
+	deque.PushBack(5)
+	deque.PushBack(8)
+	fmt.Println(deque.Front().Value)
+	fmt.Println(PopFrontDeque(deque))
+	fmt.Println(deque.Back().Value)
+	fmt.Println(PopBackDeque(deque))
 }
