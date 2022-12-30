@@ -91,6 +91,10 @@ func type_map() {
 		counts[s]++
 	}
 	fmt.Println(counts)
+
+	for k, v := range counts {
+		fmt.Println(k, v)
+	}
 }
 
 func main() {
