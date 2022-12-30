@@ -16,4 +16,11 @@ func sort_string(s string) string {
 func main() {
 	s := "cdaeb"
 	fmt.Println(sort_string(s))
+
+	for i := range s {
+		fmt.Println(i)
+	}
+	for i, t := range s {
+		fmt.Println(i, t)
+	}
 }
