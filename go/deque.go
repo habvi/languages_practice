@@ -41,6 +41,8 @@ func main() {
 	deque.PushBack(5)
 	deque.PushBack(8)
 
+	fmt.Println(deque.Len())
+
 	deque_print_all(deque)
 	deque_print_all_reverse(deque)
 
