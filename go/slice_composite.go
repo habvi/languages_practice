@@ -73,9 +73,20 @@ func insert_i_th() {
 	fmt.Println(vec)
 }
 
+// [x, x, x, x], len = n
+func init_slice(n, x int) []int {
+	vec := make([]int, n)
+	vec[0] = x
+	for i := 1; i < len(vec); i *= 2 {
+		copy(vec[i:], vec[:i])
+	}
+	return vec
+}
+
 func main() {
 	type_slice()
 	make_1d()
 	make_2d()
 	insert_i_th()
+	fmt.Println(init_slice(10, -1))
 }
