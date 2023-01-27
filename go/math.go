@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"strconv"
 )
 
 func abs(x int) int {
@@ -27,6 +28,11 @@ func min_n(nums ...int) int {
 		res = min(res, nums[i])
 	}
 	return res
+}
+
+func bin2() {
+	i2, _ := strconv.ParseInt("00000010100101000001111010011100", 2, 0)
+	fmt.Println(i2)
 }
 
 func main() {
